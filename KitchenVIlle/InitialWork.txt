@@ -1,0 +1,31 @@
+TagLine: Own a cozy kitchen 
+
+TechStack: 
+Backend: React
+Frontend: Go 
+Database: Postgres
+Deployment: Dockers
+
+Using the KitchenVille application users can create new recipes view the list of recipes the user has created. 
+
+Branch:
+Master: for deployment 
+Development: combined backend and frontend
+Backend: For all the backend work 
+Frontend: For all the frontend work 
+Build prototype for user
+
+Modules 
+User Sign-in Signup
+Create recipes 
+Display recipes 
+Delete recipes 
+Edit recipes
+
+ 
+
+
+
+
+
+https://www.youtube.com/watch?v=h5FzB9PHYns
