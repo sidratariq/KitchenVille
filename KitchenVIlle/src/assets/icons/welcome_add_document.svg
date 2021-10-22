@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="150px" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5,124 L145,124 L145,39.6430476 C145,37.6320853 143.343081,36 141.298216,36 L8.70178426,36 C6.65691863,36 5,37.6320853 5,39.6430476 L5,124 Z" id="path-1"></path>
+        <path d="M15,117 L15,45.2422431 C15,44.0060197 15.980847,43 17.1861375,43 L132.813863,43 C134.019153,43 135,44.0060197 135,45.2422431 L135,117 L15,117 Z" id="path-2"></path>
+        <rect id="path-3" x="0" y="122" width="150" height="8" rx="2"></rect>
+    </defs>
+    <g id="Archives" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy">
+            <g id="Group" transform="translate(0.000000, 10.000000)">
+                <g id="Fill-1">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke="#D7E5FB" stroke-width="2" d="M6,123 L144,123 L144,39.6430476 C144,38.1874156 142.793773,37 141.298216,37 L8.70178426,37 C7.20622696,37 6,38.1874156 6,39.6430476 L6,123 Z"></path>
+                </g>
+                <g id="Fill-5">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <path stroke="#D7E5FB" stroke-width="1" d="M15.5,116.5 L134.5,116.5 L134.5,45.2422431 C134.5,44.2793662 133.740135,43.5 132.813863,43.5 L17.1861375,43.5 C16.2598648,43.5 15.5,44.2793662 15.5,45.2422431 L15.5,116.5 Z"></path>
+                </g>
+                <g id="Rectangle">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <rect stroke="#D7E5FB" stroke-width="2" x="1" y="123" width="148" height="6" rx="2"></rect>
+                </g>
+                <path d="M85.1116988,125.656465 L66.1154724,125.656465 C65.1659441,125.656465 64.3083969,125.136544 63.9305668,124.333147 L63.6135856,123.656465 L87.6135856,123.656465 L87.2966045,124.333147 C86.9187743,125.136544 86.0612271,125.656465 85.1116988,125.656465" id="Fill-13" fill="#D7E5FB"></path>
+                <polygon id="Fill-16" fill="#E3E3E3" style="mix-blend-mode: multiply;" opacity="0.9" points="23 116 25 116 25 36 23 36"></polygon>
+                <path d="M25,116 L25,2 C25,0.8954305 25.8954305,-1.91384796e-17 27,-2.22044605e-16 L123,-2.22044605e-16 C124.104569,7.42348761e-15 125,0.8954305 125,2 L125,116 L123,116 L123,2 L27,2 L27,116 L25,116 Z M27,116 L25,116 L25,2 C25,0.8954305 25.8954305,-1.91384796e-17 27,-2.22044605e-16 L123,-2.22044605e-16 C124.104569,7.42348761e-15 125,0.8954305 125,2 L125,116 L123,116 L123,2 L27,2 L27,116 Z" id="Fill-18" fill="#777777" fill-rule="nonzero"></path>
+                <rect id="Rectangle-2" fill="#FFFFFF" x="27" y="2" width="96" height="114"></rect>
+                <polygon id="Fill-28" fill="#777777" points="38 18 75 18 75 14 38 14"></polygon>
+                <polygon id="Fill-28-Copy-9" fill="#777777" points="77 18 112 18 112 16 77 16"></polygon>
+                <polygon id="Fill-28-Copy-2" fill="#777777" points="38 36 112 36 112 32 38 32"></polygon>
+                <polygon id="Fill-28-Copy-4" fill="#777777" points="38 54 112 54 112 50 38 50"></polygon>
+                <polygon id="Fill-28-Copy-6" fill="#777777" points="38 72 112 72 112 68 38 68"></polygon>
+                <polygon id="Fill-28-Copy" fill="#777777" points="38 27 112 27 112 23 38 23"></polygon>
+                <polygon id="Fill-28-Copy-3" fill="#777777" points="38 45 112 45 112 41 38 41"></polygon>
+                <polygon id="Fill-28-Copy-5" fill="#777777" points="38 63 75 63 75 59 38 59"></polygon>
+                <polygon id="Fill-28-Copy-10" fill="#777777" points="77 63 112 63 112 61 77 61"></polygon>
+                <polygon id="Fill-28-Copy-7" fill="#777777" points="38 81 68 81 68 77 38 77"></polygon>
+                <polygon id="Fill-28-Copy-8" fill="#777777" points="38 103 75 103 75 101 38 101"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

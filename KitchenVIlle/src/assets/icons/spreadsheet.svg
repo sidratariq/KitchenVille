@@ -1,0 +1,14 @@
+<svg id="spreadsheet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="40" viewBox="0 0 32 40">
+    <defs>
+        <path id="a" d="M2 0h21.027L32 9.012V38a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <use fill="#FFF" xlink:href="#a"/>
+            <path stroke="#777" d="M31.5 9.218L22.819.5H2A1.5 1.5 0 0 0 .5 2v36A1.5 1.5 0 0 0 2 39.5h28a1.5 1.5 0 0 0 1.5-1.5V9.218z"/>
+        </g>
+        <path stroke="#777" d="M30.793 9.5L22.5 1.207V8A1.5 1.5 0 0 0 24 9.5h6.793zM5.5 18.5v16h21v-16h-21z"/>
+        <path stroke="#777" stroke-linecap="square" d="M5.5 18.5h21M5.5 22.5h21M5.5 26.5h21M5.5 30.5h21M9.5 18.5v16"/>
+        <path fill="#008938" d="M5 16h22v3H5z"/>
+    </g>
+</svg>
