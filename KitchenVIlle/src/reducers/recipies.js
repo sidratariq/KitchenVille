@@ -1,25 +1,25 @@
-// Expenses Reducer
+// Recipies Reducer
 
-const expensesReducerDefaultState = [];
+const recipiesReducerDefaultState = [];
 
-export default (state = expensesReducerDefaultState, action) => {
+export default (state = recipiesReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_RECIPIE':
       return [
         ...state,
-        action.expense
+        action.recipie
       ];
     case 'REMOVE_RECIPIE':
       return state.filter(({ id }) => id !== action.id);
     case 'EDIT_RECIPIE':
-      return state.map((expense) => {
-        if (expense.id === action.id) {
+      return state.map((recipie) => {
+        if (recipie.id === action.id) {
           return {
-            ...expense,
+            ...recipie,
             ...action.updates
           };
         } else {
-          return expense;
+          return recipie;
         };
       });
     default:

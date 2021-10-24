@@ -23,7 +23,7 @@ const EditRecipiePage = (props) => {
 
 const mapStateToProps = (state, props) => {
   return {
-    recipie: state.expenses.find((recipie) => recipie.id === props.match.params.id)
+    recipie: state.recipies.find((recipie) => recipie.id === props.match.params.id)
   };
 };
 

@@ -16,7 +16,7 @@ store.dispatch(addRecipie({ description: 'Biryani', createdAt: 1000 }));
 store.dispatch(addRecipie({ description: 'Pasta', amount: 109500 }));
 
 const state = store.getState();
-const visibleRecipies = getVisibleRecipies(state.expenses, state.filters);
+const visibleRecipies = getVisibleRecipies(state.recipies, state.filters);
 console.log(visibleRecipies);
 
 const jsx = (

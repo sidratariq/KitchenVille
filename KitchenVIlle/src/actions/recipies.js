@@ -10,7 +10,7 @@ export const addRecipie = (
   } = {}
 ) => ({
   type: 'ADD_RECIPIE',
-  expense: {
+  recipie: {
     id: uuid(),
     description,
     note,
