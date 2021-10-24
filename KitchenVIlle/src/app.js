@@ -10,7 +10,7 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 const store = configureStore();
-
+console.log("Value of the store")
 store.dispatch(addRecipie({ description: 'Daal Chwal', amount: 4500 }));
 store.dispatch(addRecipie({ description: 'Biryani', createdAt: 1000 }));
 store.dispatch(addRecipie({ description: 'Pasta', amount: 109500 }));
