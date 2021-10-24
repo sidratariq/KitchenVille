@@ -1,20 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import RecipieForm from './RecipieForm';
-import { editExpense, removeExpense } from '../actions/expenses';
+import { editRecipie, removeRecipie } from '../actions/recipies';
 
 const EditRecipiePage = (props) => {
   return (
     <div>
       <RecipieForm
-        expense={props.expense}
-        onSubmit={(expense) => {
-          props.dispatch(editExpense(props.expense.id, expense));
+        recipie={props.recipie}
+        onSubmit={(recipie) => {
+          props.dispatch(editRecipie(props.recipie.id, recipie));
           props.history.push('/');
         }}
       />
       <button onClick={() => {
-        props.dispatch(removeExpense({ id: props.expense.id }));
+        props.dispatch(removeRecipie({ id: props.recipie.id }));
         props.history.push('/');
       }}>Remove</button>
     </div>
@@ -23,7 +23,7 @@ const EditRecipiePage = (props) => {
 
 const mapStateToProps = (state, props) => {
   return {
-    expense: state.expenses.find((expense) => expense.id === props.match.params.id)
+    recipie: state.expenses.find((recipie) => recipie.id === props.match.params.id)
   };
 };
 

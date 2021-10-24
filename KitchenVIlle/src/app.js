@@ -3,21 +3,21 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { addExpense } from './actions/expenses';
+import { addRecipie } from './actions/recipies';
 import { setTextFilter } from './actions/filters';
-import getVisibleExpenses from './selectors/Recipies';
+import getVisibleRecipies from './selectors/Recipies';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'Daal Chwal', amount: 4500 }));
-store.dispatch(addExpense({ description: 'Biryani', createdAt: 1000 }));
-store.dispatch(addExpense({ description: 'Pasta', amount: 109500 }));
+store.dispatch(addRecipie({ description: 'Daal Chwal', amount: 4500 }));
+store.dispatch(addRecipie({ description: 'Biryani', createdAt: 1000 }));
+store.dispatch(addRecipie({ description: 'Pasta', amount: 109500 }));
 
 const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-console.log(visibleExpenses);
+const visibleRecipies = getVisibleRecipies(state.expenses, state.filters);
+console.log(visibleRecipies);
 
 const jsx = (
   <Provider store={store}>
