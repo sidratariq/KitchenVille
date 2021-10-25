@@ -1,7 +1,7 @@
 {
-  "name": "KitchenVille", 
+  "name": "KitchenVille",
   "engines": {
-    "node": "8.13.0" 
+    "node": "8.13.0"
   },
   "engineStrict": true,
   "version": "1.0.0",
@@ -27,6 +27,7 @@
     "css-loader": "0.28.4",
     "express": "4.15.4",
     "extract-text-webpack-plugin": "3.0.0",
+    "firebase": "4.2.0",
     "moment": "2.18.1",
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",

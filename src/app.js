@@ -8,6 +8,7 @@ import { setTextFilter } from './actions/filters';
 import getVisibleRecipies from './selectors/Recipies';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
+import './firebase/firebase'
 
 const store = configureStore();
 console.log("Value of the store")
