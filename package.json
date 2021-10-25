@@ -2,7 +2,7 @@
   "name": "KitchenVille",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "sidra tariq",
+  "author": "Sidra Tariq",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
