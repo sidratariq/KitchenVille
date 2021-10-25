@@ -1,8 +1,9 @@
 {
   "name": "KitchenVille",
   "engines": {
-    "node": ">=8.6.0" 
+    "node": "8.6.0" 
   },
+  "engineStrict": true,
   "version": "1.0.0",
   "main": "index.js",
   "author": "Sidra Tariq",
