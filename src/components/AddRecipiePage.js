@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import RecipieForm from './RecipieForm';
-import { addRecipie } from '../actions/recipies';
+import { startAddRecipie } from '../actions/recipies';
 
 const AddRecipiePage = (props) => (
   <div>
     <h1>Add Recipie</h1>
     <RecipieForm
       onSubmit={(recipie) => {
-        props.dispatch(addRecipie(recipie));
+        props.dispatch(startAddRecipie(recipie));
         props.history.push('/');
       }}
     />

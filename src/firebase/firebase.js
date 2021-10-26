@@ -1,39 +1,57 @@
 import * as firebase from 'firebase'
 
 const config = {
-    apiKey: "AIzaSyDGOwGvqiI52LdfeA3r4DDHHspOz58Jybg",
-    authDomain: "kitchenville-eb4d3.firebaseapp.com",
-    databaseURL: "https://kitchenville-eb4d3-default-rtdb.firebaseio.com",
-    projectId: "kitchenville-eb4d3",
-    storageBucket: "kitchenville-eb4d3.appspot.com",
-    messagingSenderId: "155736950229",
-    appId: "1:155736950229:web:31e499880ca6f5d2aba95c",
-    measurementId: "G-YGY1FFZ53E"
-};
-
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.FIREBASE_DATABASE_URL,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
+  };
 
 firebase.initializeApp(config);
 
 const database = firebase.database();
 
+// Insert
+// database.ref('recipies').set({
+//     name: 'Sidra Tariq',
+//     age: 24,
+//     stressLevel: 6,
+//     job: {
+//       title: 'Software developer',
+//       company: 'Google'
+//     },
+//     location: {
+//       city: 'Berlin',
+//       country: 'Germany'
+//     }
+//   }).then(() => {
+//     console.log('Data is saved!');
+//   }).catch((e) => {
+//     console.log('This failed.', e);
+//   });
+
+export {database, firebase as default};
+
 // Setup Recipies with three items (Description, note, amount, createdAt)
 // child_removed
 
 // child_removed
-database.ref('recipies').on('child_removed', (snapshot) => {
-    console.log(snapshot.key, snapshot.val());
-  });
-  
+// database.ref('recipies').on('child_removed', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+//   });
+
   // child_changed
-  database.ref('recipies').on('child_changed', (snapshot) => {
-    console.log(snapshot.key, snapshot.val());
-  });
-  
+//   database.ref('recipies').on('child_changed', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+//   });
+
   // child_added
-  database.ref('recipies').on('child_added', (snapshot) => {
-    console.log(snapshot.key, snapshot.val());
-  });
-  
+//   database.ref('recipies').on('child_added', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+//   });
+
 
 //subscription 
 // database.ref('recipies')
