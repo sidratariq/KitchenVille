@@ -22,6 +22,8 @@ export default (state = recipiesReducerDefaultState, action) => {
           return recipie;
         };
       });
+    case 'SET_RECIPIES':
+      return action.recipies;
     default:
       return state;
   }

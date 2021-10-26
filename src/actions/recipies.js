@@ -5,7 +5,7 @@ export const addRecipie = (recipie) => {
   console.log("Value of the recipie",recipie)
   return ( 
     {
-    type: 'ADD_EXPENSE',
+    type: 'ADD_Recipie',
     recipie
   }
   )};
@@ -30,32 +30,20 @@ export const startAddRecipie = (recipieData = {}) => {
   };
 };
 
-// export const startAddRecipie = (recipieData = {}) =>{
-//   console.log("Iam the DB value",database)
-//     return (dispatch) =>{
-//       const {description = '',
-//       note = '',
-//       amount = 0,
-//       createdAt = 0} = recipieData;
-
-//       const recipie = {description,note, amount,createdAt}
-
-//       database().ref("recipies").push(recipie).then((ref)=>{
-//         dispatch(addRecipie(
-//           {
-//             id: ref.key,
-//             ...recipie
-//           }
-//         ))
-//       });
-//     };
-// };
-
 // REMOVE_RECIPIE
 export const removeRecipie = ({ id } = {}) => ({
   type: 'REMOVE_RECIPIE',
   id
 });
+
+export const startRemoveRecipie = ({ id } = {}) => {
+  return (dispatch) => {
+    return database.ref(`recipies/${id}`).remove().then(() => {
+      dispatch(removeRecipie({ id }));
+    });
+  };
+};
+
 
 // EDIT_RECIPIE
 export const editRecipie = (id, updates) => ({
@@ -63,3 +51,37 @@ export const editRecipie = (id, updates) => ({
   id,
   updates
 });
+
+export const startEditRecipie = (id, updates) =>{
+  return (dispatch)=>{
+   return database.ref(`recipies/${id}`).update(updates).then(()=>{
+      dispatch(editRecipie(id,updates));
+    })
+}
+}
+
+// SET_RECIPIES
+export const setRecipies = (recipies) => ({
+  type: 'SET_RECIPIES',
+  recipies
+});
+
+// export const startSetRecipies;
+
+
+export const startSetRecipies = () => {
+  return (dispatch) => {
+    return database.ref('recipies').once('value').then((snapshot) => {
+      const recipies = [];
+
+      snapshot.forEach((childSnapshot) => {
+        recipies.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val()
+        });
+      });
+
+      dispatch(setRecipies(recipies));
+    });
+  };
+};

@@ -5,6 +5,7 @@ import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { addRecipie } from './actions/recipies';
 import { setTextFilter } from './actions/filters';
+import { startSetRecipies } from './actions/recipies'
 import getVisibleRecipies from './selectors/Recipies';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -12,9 +13,6 @@ import './firebase/firebase'
 
 const store = configureStore();
 console.log("Value of the store")
-store.dispatch(addRecipie({ description: 'Daal Chwal', amount: 4500 }));
-store.dispatch(addRecipie({ description: 'Biryani', createdAt: 1000 }));
-store.dispatch(addRecipie({ description: 'Pasta', amount: 109500 }));
 
 const state = store.getState();
 const visibleRecipies = getVisibleRecipies(state.recipies, state.filters);
@@ -26,4 +24,8 @@ const jsx = (
   </Provider>
 );
 
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+
+store.dispatch(startSetRecipies()).then(() => {
+  ReactDOM.render(jsx, document.getElementById('app'));
+});

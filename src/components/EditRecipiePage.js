@@ -1,30 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import RecipieForm from './RecipieForm';
-import { editRecipie, removeRecipie } from '../actions/recipies';
+import { startEditRecipie, startRemoveRecipie } from '../actions/recipies';
 
-const EditRecipiePage = (props) => {
-  return (
-    <div>
-      <RecipieForm
-        recipie={props.recipie}
-        onSubmit={(recipie) => {
-          props.dispatch(editRecipie(props.recipie.id, recipie));
-          props.history.push('/');
-        }}
-      />
-      <button onClick={() => {
-        props.dispatch(removeRecipie({ id: props.recipie.id }));
-        props.history.push('/');
-      }}>Remove</button>
-    </div>
-  );
-};
-
-const mapStateToProps = (state, props) => {
-  return {
-    recipie: state.recipies.find((recipie) => recipie.id === props.match.params.id)
+export class EditRecipiePage extends React.Component {
+  onSubmit = (recipie) => {
+    this.props.startEditRecipie(this.props.recipie.id, recipie);
+    this.props.history.push('/');
   };
+  onRemove = () => {
+    this.props.startRemoveRecipie({ id: this.props.recipie.id });
+    this.props.history.push('/');
+  };
+  render() {
+    return (
+      <div>
+        <RecipieForm
+          recipie={this.props.recipie}
+          onSubmit={this.onSubmit}
+        />
+        <button onClick={this.onRemove}>Remove</button>
+      </div>
+    );
+  }
 };
 
-export default connect(mapStateToProps)(EditRecipiePage);
+const mapStateToProps = (state, props) => ({
+  recipie: state.recipies.find((recipie) => recipie.id === props.match.params.id)
+});
+
+const mapDispatchToProps = (dispatch, props) => ({
+  startEditRecipie: (id, recipie) => dispatch(startEditRecipie(id, recipie)),
+  startRemoveRecipie: (data) => dispatch(startRemoveRecipie(data))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditRecipiePage);
