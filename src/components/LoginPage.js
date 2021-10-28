@@ -6,9 +6,11 @@ export const LoginPage = (props) => {
   console.log("Value of startLogin",props)
   return (
     <div className="box-layout">
+    <div className="box_image"/>
+    
     <div className="box-layout__box">
-      <h1 className="box-layout__title">KitchenVille</h1>
-      <p>Own a Cozy Kitchen</p>
+      <h1 className="box-layout__title"></h1>
+      <p>.</p>
       <button onClick={props.startLogin}>Login</button>
     </div>
   </div>
