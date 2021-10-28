@@ -1,8 +1,8 @@
-import {database} from '../firebase/firebase';
+// import {database} from '../firebase/firebase';
+import database from '../firebase/firebase';
 
 // ADD_RECIPIE
 export const addRecipie = (recipie) => {
-  console.log("Value of the recipie",recipie)
   return ( 
     {
     type: 'ADD_Recipie',

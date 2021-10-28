@@ -1,22 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import AppRouter from './routers/AppRouter';
+import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { addRecipie } from './actions/recipies';
 import { setTextFilter } from './actions/filters';
 import { startSetRecipies } from './actions/recipies'
 import getVisibleRecipies from './selectors/Recipies';
+import { login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
-import './firebase/firebase'
+import { firebase } from './firebase/firebase';
 
 const store = configureStore();
-console.log("Value of the store")
 
 const state = store.getState();
 const visibleRecipies = getVisibleRecipies(state.recipies, state.filters);
-console.log(visibleRecipies);
 
 const jsx = (
   <Provider store={store}>
@@ -24,8 +22,28 @@ const jsx = (
   </Provider>
 );
 
+let hasRendered = false;
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(jsx, document.getElementById('app'));
+    hasRendered = true;
+  }
+};
+
 ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
 
-store.dispatch(startSetRecipies()).then(() => {
-  ReactDOM.render(jsx, document.getElementById('app'));
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    store.dispatch(login(user.uid));
+    store.dispatch(startSetRecipies()).then(() => {
+      renderApp();
+      if (history.location.pathname === '/') {
+        history.push('/dashboard');
+      }
+    });
+  } else {
+    store.dispatch(logout());
+    renderApp();
+    history.push('/');
+  }
 });
