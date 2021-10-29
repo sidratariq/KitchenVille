@@ -4,14 +4,17 @@ import RecipieForm from './RecipieForm';
 import { startEditRecipie, startRemoveRecipie } from '../actions/recipies';
 
 class EditRecipiePage extends React.Component {
+  
   onSubmit = (recipie) => {
     this.props.startEditRecipie(this.props.recipie.id, recipie);
-    this.props.history.push('/');
+    this.props.history.push('/dashboard');
   };
+
   onRemove = () => {
     this.props.startRemoveRecipie({ id: this.props.recipie.id });
-    // this.props.history.push('/');
+    this.props.history.push('/dashboard');
   };
+  
   render() {
     return (
       <div>
@@ -22,7 +25,7 @@ class EditRecipiePage extends React.Component {
         </div>
         <div className="content-container">
           <RecipieForm
-            expense={this.props.recipie}
+            recipie={this.props.recipie}
             onSubmit={this.onSubmit}
           />
           <button className="button button--secondary" onClick={this.onRemove}>Remove Recipie</button>

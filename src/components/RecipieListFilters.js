@@ -6,22 +6,21 @@ import { withRouter } from "react-router-dom";
 
 class RecipieListFilters extends React.Component {
 
-
-
   state = {
     calendarFocused: null
   };
+
   onDatesChange = ({ startDate, endDate }) => {
     this.props.dispatch(setStartDate(startDate));
     this.props.dispatch(setEndDate(endDate));
   };
+
   onFocusChange = (calendarFocused) => {
     this.setState(() => ({ calendarFocused }));
-    
   }
 
  handleClick() {
-  this.props.history.push("/create");
+   this.props.history.push('/create');
   }
 
   render() {
