@@ -10,6 +10,10 @@
   @extend .text-input;
 }
 
+.text-width {
+  width: 100%;
+}
+
 .textarea {
   @extend .text-input;
   height: 10rem;

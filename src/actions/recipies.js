@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import database from '../firebase/firebase';
 
 // ADD_RECIPIE
@@ -17,10 +16,8 @@ export const startAddRecipie = (recipieData = {}) => {
     const {
       description = '',
       note = '',
-      amount = 0,
-      createdAt = 0
     } = recipieData;
-    const recipie = { description, note, amount, createdAt };
+    const recipie = { description, note};
 
     return database.ref(`users/${uid}/recipies`).push(recipie).then((ref) => {
       dispatch(addRecipie({

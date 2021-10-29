@@ -1,10 +1,10 @@
 TagLine: Own a cozy kitchen 
 
 TechStack: 
-Backend: React
-Frontend: Go 
-Database: Postgres
-Deployment: Dockers
+Backend: Node Server
+Frontend:  React
+Database: FireBase
+Deployment: Heroku
 
 Using the KitchenVille application users can create new recipes view the list of recipes the user has created. 
 

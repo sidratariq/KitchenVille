@@ -8,7 +8,6 @@ const RecipieListItem = (props) => (
     <div className="list-header">
       <div className="show-for-mobile">Recipies</div>
       <div className="show-for-desktop">Recipie</div>
-      <div className="show-for-desktop">Amount</div>
     </div>
 
     <div className="list-body">
