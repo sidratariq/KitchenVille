@@ -82,7 +82,7 @@ export default class RecipieForm extends React.Component {
           isOutsideRange={() => false}
         />
           <textarea
-            placeholder="Add a note for your recipe (optional)"
+            placeholder="Add Your Ingredients"
             className="textarea"
             value={this.state.note}
             onChange={this.onNoteChange}

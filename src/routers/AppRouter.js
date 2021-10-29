@@ -1,29 +1,25 @@
 import React from 'react';
 import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 import RecipieDashboardPage from '../components/RecipieDashboardPage';
 import AddRecipiePage from '../components/AddRecipiePage';
-import { createBrowserHistory } from 'history'
 import EditRecipiePage from '../components/EditRecipiePage';
-import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/NotFoundPage';
-import Header from '../components/Header';
-import LoginPage  from '../components/LoginPage';
-import {PrivateRoute} from './PrivateRoute'
+import LoginPage from '../components/LoginPage';
+import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
-export const history = createBrowserHistory();
+export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
     <div>
-      <Header />
       <Switch>
-        <Route path="/" component={LoginPage} exact={true} />
-        <Route path="/dashboard" component={RecipieDashboardPage}/>
-        <Route path="/create" component={AddRecipiePage} />
-        <Route path="/edit/:id" component={EditRecipiePage} />
-        <Route path="/help" component={HelpPage} />
-        <PublicRoute component={NotFoundPage} />
+        <PublicRoute path="/" component={LoginPage} exact={true} />
+        <PrivateRoute path="/dashboard" component={RecipieDashboardPage} />
+        <PrivateRoute path="/create" component={AddRecipiePage} />
+        <PrivateRoute path="/edit/:id" component={EditRecipiePage} />
+        <Route component={NotFoundPage} />
       </Switch>
     </div>
   </Router>

@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import RecipieForm from './RecipieForm';
 import { startEditRecipie, startRemoveRecipie } from '../actions/recipies';
 
-export class EditRecipiePage extends React.Component {
+class EditRecipiePage extends React.Component {
   onSubmit = (recipie) => {
     this.props.startEditRecipie(this.props.recipie.id, recipie);
     this.props.history.push('/');
   };
   onRemove = () => {
     this.props.startRemoveRecipie({ id: this.props.recipie.id });
-    this.props.history.push('/');
+    // this.props.history.push('/');
   };
   render() {
     return (

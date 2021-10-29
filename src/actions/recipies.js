@@ -1,4 +1,4 @@
-// import {database} from '../firebase/firebase';
+import uuid from 'uuid';
 import database from '../firebase/firebase';
 
 // ADD_RECIPIE
@@ -12,7 +12,8 @@ export const addRecipie = (recipie) => {
 
 
 export const startAddRecipie = (recipieData = {}) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const {
       description = '',
       note = '',
@@ -21,7 +22,7 @@ export const startAddRecipie = (recipieData = {}) => {
     } = recipieData;
     const recipie = { description, note, amount, createdAt };
 
-    return database.ref('recipies').push(recipie).then((ref) => {
+    return database.ref(`users/${uid}/recipies`).push(recipie).then((ref) => {
       dispatch(addRecipie({
         id: ref.key,
         ...recipie
@@ -37,8 +38,9 @@ export const removeRecipie = ({ id } = {}) => ({
 });
 
 export const startRemoveRecipie = ({ id } = {}) => {
-  return (dispatch) => {
-    return database.ref(`recipies/${id}`).remove().then(() => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/recipies/${id}`).remove().then(() => {
       dispatch(removeRecipie({ id }));
     });
   };
@@ -53,8 +55,9 @@ export const editRecipie = (id, updates) => ({
 });
 
 export const startEditRecipie = (id, updates) =>{
-  return (dispatch)=>{
-   return database.ref(`recipies/${id}`).update(updates).then(()=>{
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+   return database.ref(`users/${uid}/recipies/${id}`).update(updates).then(()=>{
       dispatch(editRecipie(id,updates));
     })
 }
@@ -70,8 +73,9 @@ export const setRecipies = (recipies) => ({
 
 
 export const startSetRecipies = () => {
-  return (dispatch) => {
-    return database.ref('recipies').once('value').then((snapshot) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/recipies`).once('value').then((snapshot) => {
       const recipies = [];
 
       snapshot.forEach((childSnapshot) => {
