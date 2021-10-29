@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
 import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from '../actions/filters';
-import { withRouter } from "react-router-dom";
+// import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class RecipieListFilters extends React.Component {
 
@@ -19,21 +20,19 @@ class RecipieListFilters extends React.Component {
     this.setState(() => ({ calendarFocused }));
   }
 
- handleClick() {
+  handleClick = () => {
    this.props.history.push('/create');
   }
 
   render() {
     return (
       <div className="content-container">
-        {/* <button className="button button-wide" onClick={handleClick}>Add Recipie</button> */}
 
         <button className="button button-wide" onClick={this.handleClick}>Add Recipie</button>
 
         <div className="input-group">
 
           <div className="input-group__item">
-
             <input
               type="text"
               className="text-input"
