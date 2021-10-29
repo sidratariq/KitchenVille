@@ -48,10 +48,18 @@
   margin: 0;
   word-break: break-all;
 }
+.list-inline-item{
+  display: inline;
+  width: 50%;
+}
 
 .list-item__sub-title {
   color: $grey;
   font-size: $font-size-small;
+}
+
+.list-item-container{
+  width: 100%;
 }
 
 .list-item__data {

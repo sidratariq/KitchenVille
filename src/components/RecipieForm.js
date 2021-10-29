@@ -10,7 +10,7 @@ export default class RecipieForm extends React.Component {
     this.state = {
       description: props.recipie ? props.recipie.description : '',
       note: props.recipie ? props.recipie.note : '',
-      calendarFocused: false,
+      steps: props.recipie ? props.recipie.steps: '',
       error: ''
     };
   }
@@ -23,10 +23,12 @@ export default class RecipieForm extends React.Component {
     this.setState(() => ({ note }));
   };
 
- 
-  onFocusChange = ({ focused }) => {
-    this.setState(() => ({ calendarFocused: focused }));
+  onStepsChange = (e) => {
+    const steps = e.target.value;
+    this.setState(() => ({ steps }));
   };
+
+
   onSubmit = (e) => {
     e.preventDefault();
 
@@ -36,7 +38,8 @@ export default class RecipieForm extends React.Component {
       this.setState(() => ({ error: '' }));
       this.props.onSubmit({
         description: this.state.description,
-        note: this.state.note
+        note: this.state.note,
+        steps: this.state.steps
       });
     }
   };
@@ -44,7 +47,7 @@ export default class RecipieForm extends React.Component {
     return (
       <form className="form" onSubmit={this.onSubmit}>
         {this.state.error && <p className="form__error">{this.state.error}</p>}
-       
+
         <input
           type="text"
           placeholder="Recipie Title"
@@ -53,17 +56,26 @@ export default class RecipieForm extends React.Component {
           value={this.state.description}
           onChange={this.onDescriptionChange}
         />
-        
-          <textarea
-            placeholder="Add Your Ingredients"
-            className="textarea"
-            value={this.state.note}
-            onChange={this.onNoteChange}
-          >
-          </textarea>
-          <div>
-        <button className="button">Add Recipie</button>
-          </div>
+
+        <textarea
+          placeholder="Add Your Ingredients"
+          className="textarea"
+          value={this.state.note}
+          onChange={this.onNoteChange}
+        >
+        </textarea>
+
+        <textarea
+          placeholder="Enter Steps to Follow"
+          className="textarea"
+          value={this.state.steps}
+          onChange={this.onStepsChange}
+        >
+        </textarea>
+
+        <div>
+          <button className="button">Add Recipie</button>
+        </div>
       </form>
     )
   }

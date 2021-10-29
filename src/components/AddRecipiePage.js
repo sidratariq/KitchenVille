@@ -5,6 +5,7 @@ import { startAddRecipie } from '../actions/recipies';
 
 export class AddRecipiePage extends React.Component {
   onSubmit = (recipie) => {
+    console.log("Value of recipie",recipie)
     this.props.startAddRecipie(recipie);
     this.props.history.push('/');
   };

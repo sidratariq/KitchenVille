@@ -16,8 +16,9 @@ export const startAddRecipie = (recipieData = {}) => {
     const {
       description = '',
       note = '',
+      steps
     } = recipieData;
-    const recipie = { description, note};
+    const recipie = { description, note,steps};
 
     return database.ref(`users/${uid}/recipies`).push(recipie).then((ref) => {
       dispatch(addRecipie({
