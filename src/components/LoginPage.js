@@ -2,16 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin } from '../actions/auth';
 
-export const LoginPage = (props) => {
-  console.log("Value of startLogin",props)
+const LoginPage = (props) => {
   return (
     <div className="box-layout">
-    <div className="box_image"/>
     
     <div className="box-layout__box">
+    <div className="box_image"/>
+
       <h1 className="box-layout__title"></h1>
-      <p>.</p>
-      <button onClick={props.startLogin}>Login</button>
+      <button className="button" onClick={props.startLogin}>Login With Google</button>
     </div>
   </div>
 

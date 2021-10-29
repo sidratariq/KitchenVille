@@ -15,11 +15,18 @@ export class EditRecipiePage extends React.Component {
   render() {
     return (
       <div>
-        <RecipieForm
-          recipie={this.props.recipie}
-          onSubmit={this.onSubmit}
-        />
-        <button onClick={this.onRemove}>Remove</button>
+        <div className="page-header">
+          <div className="content-container">
+            <h1 className="page-header__title">Edit Recipie</h1>
+          </div>
+        </div>
+        <div className="content-container">
+          <RecipieForm
+            expense={this.props.recipie}
+            onSubmit={this.onSubmit}
+          />
+          <button className="button button--secondary" onClick={this.onRemove}>Remove Recipie</button>
+        </div>
       </div>
     );
   }

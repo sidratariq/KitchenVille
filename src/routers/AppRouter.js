@@ -7,7 +7,7 @@ import EditRecipiePage from '../components/EditRecipiePage';
 import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
-import { LoginPage } from '../components/LoginPage';
+import LoginPage  from '../components/LoginPage';
 import {PrivateRoute} from './PrivateRoute'
 import PublicRoute from './PublicRoute';
 
@@ -19,9 +19,9 @@ const AppRouter = () => (
       <Header />
       <Switch>
         <Route path="/" component={LoginPage} exact={true} />
-        <PrivateRoute path="/dashboard" component={RecipieDashboardPage}/>
-        <PrivateRoute path="/create" component={AddRecipiePage} />
-        <PrivateRoute path="/edit/:id" component={EditRecipiePage} />
+        <Route path="/dashboard" component={RecipieDashboardPage}/>
+        <Route path="/create" component={AddRecipiePage} />
+        <Route path="/edit/:id" component={EditRecipiePage} />
         <Route path="/help" component={HelpPage} />
         <PublicRoute component={NotFoundPage} />
       </Switch>

@@ -1,11 +1,7 @@
-
-// *{
-//   border: 1px solid black;
-// }
-
 .box-layout {
+  align-items: center;
+  background-size: cover;
   display: flex;
-  align-items: baseline;
   height: 100vh;
   justify-content: center;
   width: 100vw;
@@ -18,7 +14,7 @@
 }
 
 .box-layout__box {
-  background: fade-out(white, 0.15);
+  background: fade-out(white, .15);
   border-radius: 3px;
   padding: $l-size $m-size;
   text-align: center;

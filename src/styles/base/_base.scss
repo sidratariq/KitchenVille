@@ -1,63 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
+  color: $dark-grey;
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
-
+  line-height: 1.6;
 }
 
 button {
   cursor: pointer;
 }
 
-header {
-  display: grid;
-  height: 55px;
-  grid-template-columns: 1fr auto minmax(800px, 3fr) 1fr;
-  background-color: #1b499f;
-  color: white;
-  width: 100%;
-  height: var(--height);
-  z-index: 999;
-}
-
 button:disabled {
   cursor: default;
 }
 
-.dropdown{
-  grid-column: 4;
-  padding-top: 30px;
-}
-
 .is-active {
   font-weight: bold;
-  text-decoration: none;
-  color: white;
-}
-
-.logo{
-  grid-column: 1/2;
-  margin-left: 30px;
-}
-
-.nav {
-  all: unset;
-  grid-column: 2/4;
-  background-color: #1b499f;
-  text-align: center;
-  padding-top: 30px;
-}
-
-.nav-links {
-  width: 50%;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  padding: 30px;
-  margin: 30px;
-  font-size: large;
-  color: white!important;
 }
